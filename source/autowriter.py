@@ -7,3 +7,29 @@ ADJACENT = {'a':'sq','b':'vn','c':'xv','d':'sf','e':'wr','f':'dg',
             'g':'fh','h':'gj','i':'uo','j':'hk','k':'jl','l':'k',
             'm':'n','n':'bm','o':'ip','p':'o','q':'wa','r':'et',
             's':'ad','t':'ry','u':'yi','v':'cb','w':'qe','x':'zc','y':'tu','z':'x'}
+
+
+# Win32 SendInput — low-level keyboard injection for anti-detection mode
+import ctypes
+from ctypes import wintypes, Structure, Union, POINTER, c_ulong
+
+PUL = POINTER(c_ulong)
+
+class _KbdInput(Structure):
+    _fields_ = [("wVk", wintypes.WORD), ("wScan", wintypes.WORD),
+                ("dwFlags", wintypes.DWORD), ("time", wintypes.DWORD),
+                ("dwExtraInfo", PUL)]
+
+class _IUnion(Union):
+    _fields_ = [("ki", _KbdInput)]
+
+class _Input(Structure):
+    _fields_ = [("type", wintypes.DWORD), ("ii", _IUnion)]
+
+def _send_unicode(char: str) -> None:
+    extra = c_ulong(0)
+    code  = ord(char)
+    for flags in (0x0004, 0x0004 | 0x0002):
+        ki  = _KbdInput(0, code, flags, 0, ctypes.pointer(extra))
+        inp = _Input(1, _IUnion(ki=ki))
+        ctypes.windll.user32.SendInput(1, ctypes.pointer(inp), ctypes.sizeof(inp))

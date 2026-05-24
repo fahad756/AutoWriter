@@ -33,3 +33,6 @@ def _send_unicode(char: str) -> None:
         ki  = _KbdInput(0, code, flags, 0, ctypes.pointer(extra))
         inp = _Input(1, _IUnion(ki=ki))
         ctypes.windll.user32.SendInput(1, ctypes.pointer(inp), ctypes.sizeof(inp))
+
+# Mouse micro-jitter every 15-28 keystrokes + random thinking pauses
+# Both only active when undetect mode is enabled

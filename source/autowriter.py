@@ -36,3 +36,6 @@ def _send_unicode(char: str) -> None:
 
 # Mouse micro-jitter every 15-28 keystrokes + random thinking pauses
 # Both only active when undetect mode is enabled
+
+# WPM target slider: when > 0, overrides speed preset
+# Formula: char_delay = 60.0 / (wpm * 5)

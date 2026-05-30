@@ -39,3 +39,8 @@ def _send_unicode(char: str) -> None:
 
 # WPM target slider: when > 0, overrides speed preset
 # Formula: char_delay = 60.0 / (wpm * 5)
+
+import pystray
+from PIL import Image, ImageDraw
+
+# System tray: closing window hides app; right-click tray to quit

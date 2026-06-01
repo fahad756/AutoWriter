@@ -44,3 +44,6 @@ import pystray
 from PIL import Image, ImageDraw
 
 # System tray: closing window hides app; right-click tray to quit
+
+# Load autowriter.ico for window titlebar and tray icon
+# Added top navigation bar with brand label and Tray button

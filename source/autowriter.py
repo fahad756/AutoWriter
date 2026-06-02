@@ -50,3 +50,5 @@ from PIL import Image, ImageDraw
 
 # Refactored settings panel into 3 cards:
 #   Typing | Anti-Detection | Timing
+
+# Added CTkProgressBar that fills as text is typed

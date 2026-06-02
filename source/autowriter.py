@@ -47,3 +47,6 @@ from PIL import Image, ImageDraw
 
 # Load autowriter.ico for window titlebar and tray icon
 # Added top navigation bar with brand label and Tray button
+
+# Refactored settings panel into 3 cards:
+#   Typing | Anti-Detection | Timing

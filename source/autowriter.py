@@ -52,3 +52,5 @@ from PIL import Image, ImageDraw
 #   Typing | Anti-Detection | Timing
 
 # Added CTkProgressBar that fills as text is typed
+
+# v2.0 — all features integrated, UI polished, ready for release

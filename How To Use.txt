@@ -1,0 +1,64 @@
+AutoWriter — Human-like Typing Automation
+==========================================
+
+Double-click AutoWriter.exe to launch. No installation needed.
+
+
+HOW TO USE
+----------
+
+1. Type or paste the text you want to auto-type into the text box.
+
+2. Pick your settings (see Features below).
+
+3. Click "Start Typing" — a countdown begins (default 5 seconds).
+
+4. During the countdown, switch to your browser and click the exact
+   field or text box you want to type into.
+
+5. AutoWriter will start typing your text automatically.
+
+6. Click "Stop" at any time to cancel.
+   Or move your mouse to the top-left corner of the screen to abort.
+
+7. Closing the window sends AutoWriter to the system tray.
+   Right-click the tray icon to show or quit the app.
+
+
+FEATURES
+--------
+
+Text Editor
+  Type freely. Select text and click B / I / U / H1 / H2 in the
+  toolbar to apply formatting. Undo and Redo are supported.
+
+Speed Preset
+  Slow, Medium, Fast, Very Fast — controls how quickly characters
+  are typed.
+
+Rhythm Mode
+  Natural  — realistic random variation, like a real person typing.
+  Burst    — types in fast bursts with pauses in between.
+  Fatigue  — starts at normal speed and gradually slows down.
+  Steady   — consistent, even pace throughout.
+
+Typo + Self-Correct
+  Occasionally mispresses an adjacent key then catches and fixes it,
+  just like a human would.
+
+Anti-Detection (Undetect Mode)
+  Uses Windows low-level input (Win32 SendInput) instead of standard
+  automation — harder for websites to detect as a bot. Also adds
+  random mouse micro-movement and thinking pauses when enabled.
+
+WPM Target
+  Set a specific words-per-minute target. Overrides the speed preset
+  when set above 0.
+
+Countdown
+  How many seconds you have to switch to your browser after clicking
+  Start. Adjustable from 3 to 15 seconds.
+
+Minimize to Tray
+  Click the "Tray" button or close the window — the app keeps running
+  silently in the system tray. Click the tray icon to bring it back.

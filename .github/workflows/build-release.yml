@@ -1,0 +1,67 @@
+name: Build & Release
+
+# Runs when you push a tag like: git tag v2.1 && git push origin v2.1
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r source/requirements.txt
+          pip install pyinstaller
+
+      - name: Generate icon
+        run: python source/generate_icon.py
+
+      - name: Copy icon into source folder for build
+        run: copy autowriter.ico source\autowriter.ico
+        shell: cmd
+
+      - name: Build AutoWriter.exe
+        working-directory: source
+        run: >
+          pyinstaller
+          --onefile
+          --windowed
+          --icon=autowriter.ico
+          --name=AutoWriter
+          --collect-all customtkinter
+          --hidden-import=pystray._win32
+          --hidden-import=PIL.IcoImagePlugin
+          --add-data "autowriter.ico;."
+          --noconfirm
+          autowriter.py
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "AutoWriter ${{ github.ref_name }}"
+          body: |
+            ## AutoWriter ${{ github.ref_name }}
+
+            ### Download
+            **[AutoWriter.exe](https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/AutoWriter.exe)**
+            — standalone Windows app, no Python or libraries needed.
+
+            ### What's included
+            - Single `.exe` file, just double-click to run
+            - All features: human-like typing, anti-detection mode, system tray, rich text editor
+
+            See [README](https://github.com/${{ github.repository }}#readme) for full usage guide.
+          files: source/dist/AutoWriter.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -2,11 +2,11 @@
 
 # ⌨ AutoWriter
 
-**Human-like typing automation for Windows**
+**Type into any website — even ones that block copy-paste**
 
-Paste any text, click Start, switch to your browser — AutoWriter types it for you with natural rhythm, realistic mistakes, and zero detection footprint.
+Some websites disable pasting entirely. Some detect automation and block it. AutoWriter gets around all of that by typing your text one character at a time, exactly like a real person would — complete with natural rhythm, random pauses, and the occasional self-corrected typo.
 
-[![Download](https://img.shields.io/github/v/release/YOUR_USERNAME/AutoWriter?label=Download&style=for-the-badge&logo=windows&color=1355d4)](https://github.com/YOUR_USERNAME/AutoWriter/releases/latest)
+[![Download](https://img.shields.io/github/v/release/fahad756/AutoWriter?label=Download%20Latest&style=for-the-badge&logo=windows&color=1355d4)](https://github.com/fahad756/AutoWriter/releases/latest)
 &nbsp;
 ![Platform](https://img.shields.io/badge/Windows%2010%2F11-supported-informational?style=for-the-badge)
 &nbsp;
@@ -16,13 +16,24 @@ Paste any text, click Start, switch to your browser — AutoWriter types it for 
 
 ---
 
+## Why AutoWriter?
+
+A lot of websites and platforms actively block automated or pasted input:
+
+- **Copy-paste is disabled** — Exam portals, HR forms, and enterprise applications often block Ctrl+V and right-click paste entirely, forcing you to type manually
+- **Paste detection** — Some forms detect when content is pasted rather than typed and either reject the submission or flag it for review
+- **Bot detection** — Proctoring tools, activity monitors, and remote-work software watch input patterns and flag anything that doesn't look human
+- **Input-only fields** — Certain fields run validation logic that only triggers correctly when content arrives keystroke by keystroke, not all at once
+
+AutoWriter solves all of this. It sends your text one character at a time through Windows' own keyboard input system, with randomised delays, natural pauses after punctuation, and occasional self-correcting typos — making it completely indistinguishable from a real person sitting at the keyboard typing.
+
+---
+
 ## Download
 
-**[→ Download AutoWriter.exe from Releases](https://github.com/YOUR_USERNAME/AutoWriter/releases/latest)**
+**[→ Download AutoWriter.exe](https://github.com/fahad756/AutoWriter/releases/latest)**
 
-No Python, no libraries, no installation. Just download and double-click.
-
-> Replace `YOUR_USERNAME` with your GitHub username in the links above once the repo is live.
+No Python, no libraries, no installation. Download the `.exe` and double-click — that's it.
 
 ---
 
@@ -38,7 +49,7 @@ No Python, no libraries, no installation. Just download and double-click.
 
 ## Quick Start
 
-1. **[Download AutoWriter.exe](https://github.com/YOUR_USERNAME/AutoWriter/releases/latest)** from Releases
+1. **[Download AutoWriter.exe](https://github.com/fahad756/AutoWriter/releases/latest)** from Releases
 2. Double-click it — no install needed
 3. Paste your text into the editor and set your options
 4. Click **Start Typing**, switch to your browser, click the exact field you want to type into
@@ -155,7 +166,7 @@ AutoWriter runs silently in the background. **Closing the window does not quit t
 Requirements: Python 3.8+, git
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AutoWriter.git
+git clone https://github.com/fahad756/AutoWriter.git
 cd AutoWriter
 pip install -r source/requirements.txt
 python source/autowriter.py

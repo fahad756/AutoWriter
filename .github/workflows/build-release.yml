@@ -26,10 +26,7 @@ jobs:
 
       - name: Generate icon
         run: python source/generate_icon.py
-
-      - name: Copy icon into source folder for build
-        run: copy autowriter.ico source\autowriter.ico
-        shell: cmd
+        # generate_icon.py saves autowriter.ico next to itself, i.e. source/autowriter.ico
 
       - name: Build AutoWriter.exe
         working-directory: source
